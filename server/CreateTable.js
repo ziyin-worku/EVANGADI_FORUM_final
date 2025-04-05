@@ -38,8 +38,8 @@ title TEXT NOT NULL,
 description TEXT NOT NULL,
 tag VARCHAR(255),
 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-likes INT(20)
-dislike INT(20)
+likes INT(20),
+dislike INT(20),
 PRIMARY KEY (id,question_id),
 FOREIGN KEY (user_id) REFERENCES registration(user_id));
 
@@ -53,8 +53,8 @@ user_id INT(20) NOT NULL,
 question_id VARCHAR(100) NOT NULL,
 answer TEXT NOT NULL,
 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-likes INT(20)
-dislike INT(20)
+likes INT(20),
+dislike INT(20),
 PRIMARY KEY (answer_id),
 FOREIGN KEY (question_id) REFERENCES questions(question_id),
 FOREIGN KEY (user_id) REFERENCES registration(user_id)

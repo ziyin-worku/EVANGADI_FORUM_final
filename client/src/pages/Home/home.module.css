@@ -377,16 +377,7 @@
 .contributors {
   width: 10%;
 }
-.buttonsWrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.QuestionTypeButton {
-  background-color: white;
-  outline: 1px solid #007bff;
-  color: #007bff;
-}
+
 .QuestionTypeButton:hover {
   background-color: #007bff;
   color: white;
@@ -394,9 +385,47 @@
 .QuestionTypeButton svg {
   margin-right: 0.5rem;
 }
-.QuestionTypeButton {
+
+.buttonsWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+  margin: 1rem 0;
+}
+
+.buttonsWrapperInternal {
+  display: flex;
+  gap: 1rem;
+  flex-grow: 1;
+  position: relative;
+}
+
+.askQuestionButton {
+  display: inline-flex;
+  align-items: center;
+  /* gap: 0.5rem; */
+  padding: 0.8rem 1.5rem;
+  border-radius: 4px;
+  background: #007bff;
+  color: white;
+  text-decoration: none;
+  transition: background 0.3s ease;
   margin-right: 0.7rem;
 }
+
+.QuestionTypeButton {
+  background-color: white;
+  outline: 1px solid #007bff;
+  color: #007bff;
+  margin-right: 0.7rem;
+  /* gap: 0.5rem; */
+}
+
+.askQuestionButton:hover {
+  background: #0056b3;
+}
+
 @media (max-width: 768px) {
   .container {
     padding: 3rem 2.5rem;
@@ -427,9 +456,29 @@
   }
   .askQuestionButton {
     margin-left: 0;
+    margin: 5px;
   }
   .profileContainer {
     top: 100px;
     right: 40px;
+  }
+
+  .buttonsWrapper {
+    display: flex;
+  }
+
+  .buttonsWrapperInternal {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .askQuestionButton {
+    justify-content: center;
+  }
+}
+@media (max-width: 480px) {
+  .askQuestionButton {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
   }
 }

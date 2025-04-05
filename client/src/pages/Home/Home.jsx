@@ -22,7 +22,6 @@ import Contributors from "../../components/Contributors/Contributors";
 import { IoIosArrowDropup } from "react-icons/io";
 import Chatbot from "../../components/Chatbot/Chatbot";
 
-
 // The Main Home component
 const Home = () => {
   // Context and state management for user data and UI controls
@@ -224,7 +223,7 @@ const Home = () => {
           {/* Ask Question Button */}
           <div className={styles.askQuestionContainer}>
             <div className={styles.buttonsWrapper}>
-              <div>
+              <div className="buttonsWrapperInternal">
                 <Link
                   to="/home"
                   className={`${styles.askQuestionButton} ${styles.QuestionTypeButton}`}
@@ -249,11 +248,15 @@ const Home = () => {
                   <AiFillLike />
                   Trending
                 </Link>
+                <Link to="/question" className={styles.askQuestionButton}>
+                  Ask Question
+                </Link>
               </div>
-              <Link to="/question" className={styles.askQuestionButton}>
+              {/* <Link to="/question" className={styles.askQuestionButton}>
                 Ask Question
-              </Link>
+              </Link> */}
             </div>
+
             <br />
             <input
               onChange={(e) => handleSearch(e.target.value)}
@@ -262,6 +265,7 @@ const Home = () => {
               className={styles.searchInput}
             />
           </div>
+
           <h4 className={styles.questionsHeading}>Questions</h4>
           <div className={styles.listGroup}>
             {loading ? (
