@@ -3,6 +3,8 @@ const db = require("../db/dbConfig");
 const bcrypt = require("bcrypt");
 const { StatusCodes } = require("http-status-codes");
 const jwt = require("jsonwebtoken");
+
+
 // Register Controller
 async function register(req, res) {
   const { username, firstname, lastname, email, password } = req.body;
