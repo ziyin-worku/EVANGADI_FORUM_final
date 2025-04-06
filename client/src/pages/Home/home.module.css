@@ -65,7 +65,9 @@
 .profileBox.open {
   transform: translateX(0);
 }
-
+.profileBox.close{
+  display: none;
+}
 .closeBtn {
   background: none;
   color: red;
@@ -98,6 +100,7 @@
 
 .bioSection {
   margin: 15px 0;
+  overflow-x: hidden;
 }
 
 .bioLabel {
@@ -418,7 +421,8 @@
   background-color: white;
   outline: 1px solid #007bff;
   color: #007bff;
-  margin-right: 0.7rem;
+  /* margin-right: 0.7rem; */
+  margin: 10px;
   /* gap: 0.5rem; */
 }
 

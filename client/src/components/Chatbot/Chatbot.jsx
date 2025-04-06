@@ -1,28 +1,37 @@
-import React, { useEffect } from "react";
 
-const Chatbot = () => {
+import React, { useEffect, useState } from "react";
+
+const Chatbot = ({ triggerToggle }) => {
+  const [open, setOpen] = useState(true);
+
   useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://www.chatbase.co/embed.min.js";
-    script.id = "ATyPv_1ZlunmN7lkaV6N4"; // Give it a specific id
-    script.async = true;
-    script.setAttribute("chatbotId", "ATyPv_1ZlunmN7lkaV6N4");
-    document.body.appendChild(script);
+    if (triggerToggle === null) {
+      setOpen(triggerToggle);
+    }
+  }, [triggerToggle]);
 
-    return () => {
-      // Remove the script tag
+  useEffect(() => {
+    if (open) {
+      if (!document.getElementById("chatbase-script")) {
+        const script = document.createElement("script");
+        script.src = "https://www.chatbase.co/embed.min.js";
+        script.id = "chatbase-script";
+        script.async = false;
+        script.setAttribute("chatbotId", "ATyPv_1ZlunmN7lkaV6N4");
+        document.body.appendChild(script);
+      }
+    } else {
       const existingScript = document.getElementById("chatbase-script");
       if (existingScript) {
         document.body.removeChild(existingScript);
       }
 
-      // Remove the Chatbase widget container if it exists
       const iframeWrapper = document.querySelector("iframe[src*='chatbase']");
       if (iframeWrapper && iframeWrapper.parentElement) {
-        iframeWrapper.parentElement.remove(); // This removes the wrapper
+        iframeWrapper.parentElement.remove();
       }
-    };
-  }, []);
+    }
+  }, [ ]);
 
   return <div id="chatbase-container"></div>;
 };

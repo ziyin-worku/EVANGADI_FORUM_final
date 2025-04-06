@@ -1,4 +1,3 @@
-import "./App.css";
 import { useState, useEffect, createContext } from "react";
 import Router from "./Router";
 import axios from "./Api/axios";

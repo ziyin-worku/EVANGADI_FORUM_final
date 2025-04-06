@@ -28,9 +28,7 @@ const Home = () => {
   const { display, setDisplay, user, setUser } = useContext(AppState);
   const [searchQuery, setSearchQuery] = useState(""); // Tracks search input
   const { currentQuestions } = useContext(AppState);
-  // const [newestQuestions, setNewestQuestions] = useState([]); // Stores list of questions
-  // const [oldQuestions, setOldQuestions] = useState([]); // Stores list of questions
-  // const [likedQuestions, setLikedQuestions] = useState([]); // Stores list of questions
+  
   const [questions, setQuestions] = useState([]); // Stores list of questions
   const [questionsType, setQuestionsType] = useState("newest"); // Stores list of questions
 
@@ -174,7 +172,7 @@ const Home = () => {
             {/* Profile edit panel - shows when profileOpen is true */}
             <div
               className={`${styles.profileBox} ${
-                profileOpen ? styles.open : ""
+                profileOpen ? styles.open : styles.close
               }`}
             >
               <h4 className={styles.Name}>User: {user.username}</h4>
@@ -194,7 +192,7 @@ const Home = () => {
                 />
               </div>
               {/* Profile picture upload */}
-              <label className={styles.uploadLabel}>
+              <label className={styles.uploadLabel}>]
                 Change Profile Picture
                 <input
                   type="file"

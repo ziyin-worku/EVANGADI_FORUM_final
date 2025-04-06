@@ -7,7 +7,7 @@ app.use(cors());
 const dbConnection = require("./config/dbConfig");
 
 const createUsersTable = `
-  CREATE TABLE if not exists registration(
+CREATE TABLE if not exists registration(
 user_id INT(20) NOT NULL AUTO_INCREMENT,
 username VARCHAR(20) NOT NULL,
 email VARCHAR(40) NOT NULL,
@@ -30,7 +30,7 @@ FOREIGN KEY (user_id) REFERENCES registration(user_id));
 `;
 
 const createQuestionTable = `
-  CREATE TABLE if not exists questions(
+CREATE TABLE if not exists questions(
 id INT(20) NOT NULL AUTO_INCREMENT,
 question_id VARCHAR(100) NOT NULL UNIQUE,
 user_id INT(20) NOT NULL,
