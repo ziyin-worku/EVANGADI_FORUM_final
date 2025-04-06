@@ -28,7 +28,7 @@ const Home = () => {
   const { display, setDisplay, user, setUser } = useContext(AppState);
   const [searchQuery, setSearchQuery] = useState(""); // Tracks search input
   const { currentQuestions } = useContext(AppState);
-  
+
   const [questions, setQuestions] = useState([]); // Stores list of questions
   const [questionsType, setQuestionsType] = useState("newest"); // Stores list of questions
 
@@ -192,8 +192,8 @@ const Home = () => {
                 />
               </div>
               {/* Profile picture upload */}
-              <label className={styles.uploadLabel}>]
-                Change Profile Picture
+              <label className={styles.uploadLabel}>
+                ] Change Profile Picture
                 <input
                   type="file"
                   accept="image/*"
@@ -221,7 +221,7 @@ const Home = () => {
           {/* Ask Question Button */}
           <div className={styles.askQuestionContainer}>
             <div className={styles.buttonsWrapper}>
-              <div className="buttonsWrapperInternal">
+              <div>
                 <Link
                   to="/home"
                   className={`${styles.askQuestionButton} ${styles.QuestionTypeButton}`}

@@ -65,7 +65,7 @@
 .profileBox.open {
   transform: translateX(0);
 }
-.profileBox.close{
+.profileBox.close {
   display: none;
 }
 .closeBtn {
@@ -397,13 +397,6 @@
   margin: 1rem 0;
 }
 
-.buttonsWrapperInternal {
-  display: flex;
-  gap: 1rem;
-  flex-grow: 1;
-  position: relative;
-}
-
 .askQuestionButton {
   display: inline-flex;
   align-items: center;
@@ -469,11 +462,6 @@
 
   .buttonsWrapper {
     display: flex;
-  }
-
-  .buttonsWrapperInternal {
-    display: flex;
-    justify-content: space-between;
   }
 
   .askQuestionButton {
